@@ -4,17 +4,14 @@
 #include <string>
 using namespace std;
 
-//#write Person class here
-
-
-
-
-
-
-
-
-
-
-
-
+class Person {
+protected:
+    string name;
+    int id;
+public:
+    Person();
+    Person(const string& name, int id);
+    virtual ~Person();
+    virtual void displayInfo() const;
+};
 #endif
