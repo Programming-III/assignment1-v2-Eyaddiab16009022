@@ -4,18 +4,16 @@
 #include "Person.h"
 #include <string>
 #using namespace std;
-//#write student class here
-
-
-
-
-
-
-
-
-
-
-
+class Student : public Person {
+private:
+    int yearLevel;
+    string major;
+public:
+    Student();
+    Student(const string& name, int id, int yearLevel, const string& major);
+    virtual ~Student();
+    virtual void displayInfo() const override;
+};
 
 
 #endif
