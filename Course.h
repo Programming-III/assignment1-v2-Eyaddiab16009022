@@ -2,20 +2,24 @@
 #define COURSE_H
 
 #include <string>
-#include "Student.h"
+#include "student.h"
+#include "instructor.h"
 using namespace std;
 
-#include "person.h"
-
-class Student : public Person {
+class Course {
 private:
-    int yearLevel;
-    string major;
+    string courseCode;
+    string courseName;
+    int maxStudents;
+    Student* students;
+    int currentStudents;
+    Instructor instructor;
 public:
-    Student();
-    Student(const string& name, int id, int yearLevel, const string& major);
-    virtual ~Student();
-    virtual void displayInfo() const override;
+    Course();
+    Course(const string& courseCode, const string& courseName, int maxStudents, const Instructor& instructor);
+    ~Course();
+    bool addStudent(const Student& s);
+    void displayCourseInfo() const;
 };
 
 #endif
